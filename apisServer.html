@@ -61,6 +61,18 @@
     </pre>
 
     <script>
+      const verseChoose = document.querySelector('select');
+      const poemDisplay = document.querySelector('pre');
+
+      verseChoose.onchange = function() {
+        const verse = verseChoose.value;
+        updateDisplay(verse);
+      };
+      
+      function updateDisplay(verse){
+        console.log(verse)
+        let xhrURL = `https://github.com/simon3101/apis.github.io/verse1.txt`
+      }
 
     </script>
   </body>
