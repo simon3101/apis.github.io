@@ -73,9 +73,21 @@
         verse = verse.toLowerCase();
         verse = verse.replace(' ','')
         verse = `${verse}.txt`;
-        console.log(verse);
-        let xhrURL = `https://github.com/simon3101/apis.github.io/verse1.txt`;
+        let xmlrURL = `${verse}`;
+        let xmlr = new XMLHttpRequest();
+        xmlr.open('GET',xmlrURL);
+        xmlr.responseType = 'text';
+        
+        xmlr.onload = function(){
+          poemDisplay.textContent = xmlr.request 
+        }
+
+        xmlr.send();
+        
       }
+      
+      
+      
     </script>
   </body>
 </html>
