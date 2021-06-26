@@ -70,9 +70,8 @@
       };
       
       function updateDisplay(verse){
-        let regExp = 'verse.[0,9]$';
-        let lcVerse = verse.toLowerCase();
-        console.log(lcVerse.match(regExp);
+        let regExp = '[Vv]erse.[0,9]$';
+        console.log(verse.match(regExp));
         let xhrURL = `https://github.com/simon3101/apis.github.io/verse1.txt`
       }
 
