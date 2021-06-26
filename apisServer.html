@@ -73,7 +73,7 @@
         let i = 0 ;
         let regExp = 'verse.[0,9]$';
         verse = verse.toLowerCase();
-        verse = verse.replace(regExp,`verse${n++}`)
+        verse = verse.replace(regExp,`verse${i++}`)
         verse = `${verse}.txt`;
         console.log(verse);
         let xhrURL = `https://github.com/simon3101/apis.github.io/verse1.txt`;
