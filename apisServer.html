@@ -72,7 +72,7 @@
       function updateDisplay(verse){
         let i = 0 ;
         let regExp = 'verse.[0,9]$';
-        let verse = verse.toLowerCase();
+        verse = verse.toLowerCase();
         verse = verse.replace(regExp,`verse${n++}`)
         verse = `${verse}.txt`;
         console.log(verse);
