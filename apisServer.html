@@ -79,6 +79,9 @@
         xmlr.responseType = 'text';
        
         xmlr.onload = function(){
+           console.log('xmlr',xmlr)
+           console.log('xmlr.request',xmlr.request)
+           console.log('xmlr.response',xmlr.response)
           poemDisplay.textContent = xmlr.request;
         }
          xmlr.send();
