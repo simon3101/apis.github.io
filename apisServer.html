@@ -72,14 +72,14 @@
       function updateDisplay(verse){
         verse = verse.toLowerCase();
         verse = verse.replace(' ','')
-        verse = `${verse}.txt`;
-        let xmlrURL = `${verse}`;
+        verse = verse + '.txt';
+        let xmlrURL = verse;
         let xmlr = new XMLHttpRequest();
         xmlr.open('GET',xmlrURL);
         xmlr.responseType = 'text';
        
         xmlr.onload = function(){
-          poemDisplay.textContent = xmlr.request 
+          poemDisplay.textContent = xmlr.request;
         }
          xmlr.send();
       }
