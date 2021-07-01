@@ -85,7 +85,7 @@
                         //            console.log('xmlr.response',xmlr.response)// aqui esta el resultado de la respuesta del servidor
                         //           poemDisplay.textContent = xmlr.response;//anexamos el contenido de la respuesta del servidor como texto en la etiqueta 'HTML pre'
                         //         }
-       fetch(url).then(function(response) {
+       fetch(xmlrURL).then(function(response) {
             response.text().then(function(text) {
               poemDisplay.textContent = text;
               });
