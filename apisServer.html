@@ -77,11 +77,11 @@
         let xmlr = new XMLHttpRequest();
         xmlr.open('GET',xmlrURL);
         xmlr.responseType = 'text';
-        xmlr.send();
+       
         xmlr.onload = function(){
           poemDisplay.textContent = xmlr.request 
         }
-
+         xmlr.send();
       }
       
       updateDisplay('Verse 1');
