@@ -73,7 +73,7 @@
         verse = verse.toLowerCase();
         verse = verse.replace(' ','')
         verse = verse + '.txt';
-        let xmlrURL = verse;
+        let xmlrURL = `/apis.github.io/${verse}`;
         let xmlr = new XMLHttpRequest();
         xmlr.open('GET',xmlrURL);
         xmlr.responseType = 'text';
