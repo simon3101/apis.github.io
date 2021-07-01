@@ -71,7 +71,10 @@
       };
       
       function updateDisplay(verse){
-        console.log(verse)
+        if(poemDisplay.value == Undefined || poemDisplay.value == Null){
+          poemDisplay.value = 'Verse 1';
+          verseChoose.value = 'Verse 1'
+        }
         verse = verse.toLowerCase();//convertimos el texto en minuscula para ue coincida con la unicacion del archivo 
         verse = verse.replace(' ','')//Aqui remplazamos el caracter de espacio por un caracter nulo 
         verse = verse + '.txt';// Unimos el resultado 'verse1' con '.txt'
@@ -88,7 +91,7 @@
         }
          xmlr.send();// enviamos los datos al servidor
       }
-      
+        // esto solo hace que l verso1 aparesca por defecto como primera opcion     
 //       updateDisplay('Verse 1');//indicamos que por defecte obtendra el primer archivo del servidor de lo contario no mostrara el contenido
 //       verseChoose.value = 'Verse 1';//por defecto el valor de selec es verse1
       
