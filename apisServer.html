@@ -75,18 +75,23 @@
         verse = verse.replace(' ','')//Aqui remplazamos el caracter de espacio por un caracter nulo 
         verse = verse + '.txt';// Unimos el resultado 'verse1' con '.txt'
         let xmlrURL = `/apis.github.io/${verse}`;//aqui asignamos la direccion de URL que pronto sera usada por XHR
-        let xmlr = new XMLHttpRequest();//creamos la instacion de la Api XHR(su punto de acceso)
-        xmlr.open('GET',xmlrURL);//Abrimos la peticion GET al sevdiro
-        xmlr.responseType = 'text';// indicamos el tipo de respuesta del servidor
-       
-        xmlr.onload = function(){//XHR es asincrono, asi que no obtendremos un resultado sin una funcion que maneje la respuestas para cuando esta se haya dado con exito
-           console.log('xmlr',xmlr)
-           console.log('xmlr.request',xmlr.request)//un error que dara undfined no confundir request con response
-           console.log('xmlr.response',xmlr.response)// aqui esta el resultado de la respuesta del servidor
-          poemDisplay.textContent = xmlr.response;//anexamos el contenido de la respuesta del servidor como texto en la etiqueta 'HTML pre'
-        }
-         xmlr.send();// enviamos los datos al servidor
-      }
+                        //         let xmlr = new XMLHttpRequest();//creamos la instacion de la Api XHR(su punto de acceso)
+                        //         xmlr.open('GET',xmlrURL);//Abrimos la peticion GET al sevdiro
+                        //         xmlr.responseType = 'text';// indicamos el tipo de respuesta del servidor
+
+                        //         xmlr.onload = function(){//XHR es asincrono, asi que no obtendremos un resultado sin una funcion que maneje la respuestas para cuando esta se haya dado con exito
+                        //            console.log('xmlr',xmlr)
+                        //            console.log('xmlr.request',xmlr.request)//un error que dara undfined no confundir request con response
+                        //            console.log('xmlr.response',xmlr.response)// aqui esta el resultado de la respuesta del servidor
+                        //           poemDisplay.textContent = xmlr.response;//anexamos el contenido de la respuesta del servidor como texto en la etiqueta 'HTML pre'
+                        //         }
+       fetch(url).then(function(response) {
+            response.text().then(function(text) {
+              poemDisplay.textContent = text;
+              });
+            });
+                        //            xmlr.send();// enviamos los datos al servidor
+          }
         // esto solo hace que l verso1 aparesca por defecto como primera opcion     
       updateDisplay('Verse 1');//indicamos que por defecte obtendra el primer archivo del servidor de lo contario no mostrara el contenido
       verseChoose.value = 'Verse 1';//por defecto el valor de selec es verse1
