@@ -16,17 +16,18 @@
       // 1. The basic part of the example
       var L;
             
-      window.onload = function() {
+      window.onload = async function() {
       
         L.mapquest.key = 'ooOBoLY9KxUniMqa2GxVpJ8ZRMQW8TBL';
         var latitude;
         var longitude;
-        var navPosition = navigator.geolocation.getCurrentPosition(position=>{
+        var navPosition = await navigator.geolocation.getCurrentPosition(position=>{
           latitude = position.coords.latitude;
           longitude = position.coords.longitude;
           console.log(latitude,longitude);
-          return latitude, longitude;
+          return position
         });
+        console.log(navPosition);
         console.log('latitude',latitude);//undefined
         console.log('longitude',longitude);//undefined
         // 'map' refers to a <div> element with the ID map
