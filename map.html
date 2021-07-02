@@ -46,9 +46,9 @@
                 hoverMarker:{
                   icon: 'marker',
                   iconOptions: {
-                    size: 'sm',
+                    size: 'md',
                     primaryColor: '#ffffff',
-                    secondaryColor: '#acdee3';
+                    secondaryColor: '#acdee3'
                   }
                 },searchInput: {
                   searchAheadOptions: {
@@ -61,7 +61,7 @@
                 }
              
            }
-           let searchControl = L.mapquest.searchControl().addTo(map);
+           let searchControl = L.mapquest.searchControl(optionsSC).addTo(map);
 
 
       }
