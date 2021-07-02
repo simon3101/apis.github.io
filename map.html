@@ -24,11 +24,11 @@
         var navPosition = navigator.geolocation.getCurrentPosition(position=>{
           latitude = position.coords.latitude;
           longitude = position.coords.longitude;
+          console.log(latitude,longitude);
           return latitude, longitude;
-        
         });
-        console.log('latitude',latitude);
-        console.log('longitude',longitude);
+        console.log('latitude',latitude);//undefined
+        console.log('longitude',longitude);//undefined
         // 'map' refers to a <div> element with the ID map
         var map = L.mapquest.map('map',{
           center: [latitude, longitude],
