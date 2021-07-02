@@ -15,12 +15,14 @@
     <script>
       // 1. The basic part of the example
       var L;
-      var navPosition = navigator.geolocation.getCurrentPosition(position=>{return position});
-      
+            
       window.onload = function() {
+      
         L.mapquest.key = 'ooOBoLY9KxUniMqa2GxVpJ8ZRMQW8TBL';
+        var navPosition = navigator.geolocation.getCurrentPosition(position=>{return position});
         let latitude = navPosition.coords.latitude;
         let longitude = navPosition.coords.longitude;
+
         // 'map' refers to a <div> element with the ID map
         var map = L.mapquest.map('map',{
           center: [latitude, longitude],
