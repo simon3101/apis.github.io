@@ -19,10 +19,16 @@
       window.onload = function() {
       
         L.mapquest.key = 'ooOBoLY9KxUniMqa2GxVpJ8ZRMQW8TBL';
-        var navPosition = navigator.geolocation.getCurrentPosition(position=>{return position});
-        let latitude = navPosition.coords.latitude;
-        let longitude = navPosition.coords.longitude;
-
+        var latitude;
+        var longitude;
+        var navPosition = navigator.geolocation.getCurrentPosition(position=>{
+          latitude = position.coords.latitude;
+          longitude = position.coords.longitude;
+          return latitude, longitude;
+        
+        });
+        console.log('latitude',latitude);
+        console.log('longitude',longitude);
         // 'map' refers to a <div> element with the ID map
         var map = L.mapquest.map('map',{
           center: [latitude, longitude],
