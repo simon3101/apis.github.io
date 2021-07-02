@@ -15,11 +15,14 @@
     <script>
       // 1. The basic part of the example
       var L;
-
+      let navPosition = navigator.geolocation.getCurrentPosition(position=>{console.log(position)});
+      
       window.onload = function() {
         L.mapquest.key = 'ooOBoLY9KxUniMqa2GxVpJ8ZRMQW8TBL';
 
         // 'map' refers to a <div> element with the ID map
+        
+        
         var map = L.mapquest.map('map', {
           center: [53.480759, -2.242631],
           layers: L.mapquest.tileLayer('hybrid'),
@@ -48,7 +51,16 @@
                     primaryColor: '#ffffff',
                     secondaryColor: '#acdee3;'
                   }
+                },searchInput: {
+                  searchAheadOptions: {
+                    limit: 6,
+                    collection: 'address,adminArea,airport,poi,category,franchise'
+                  },
+                  compactResults: true,
+                  placeholderText: 'Buscar Lugar',
+                  clearTitle: 'Limpiar Busqueda'
                 }
+             
            }
            let searchControl = L.mapquest.searchControl().addTo(map);
 
