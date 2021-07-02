@@ -39,6 +39,20 @@
           })
           .bindPopup('This is Manchester!')
           .addTo(map);
+           // Options Search Controls
+           let optionsSC = {
+                hoverMarker:{
+                  icon: 'marker',
+                  iconOptions: {
+                    size: 'sm',
+                    primaryColor: '#ffffff',
+                    secondaryColor: '#acdee3;'
+                  }
+                }
+           }
+           let searchControl = L.mapquest.searchControl().addTo(map);
+
+
       }
     </script>
   </head>
