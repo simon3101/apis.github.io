@@ -8,20 +8,21 @@
     
     </style>
     <script>
-        fetch("https://ll.thespacedevs.com/2.0.0/launch/")
-      .then(data=>{
-        return data.json();
-        })
-      .then(json =>{
+      async function getList() {
+        let response = await fetch('https://ll.thespacedevs.com/2.0.0/launch/?format=json');
+
+         if (!response.ok) {
+             throw new Error(`HTTP error! status: ${response.status}`);
+           }
+
+       let myJson = await response.json();
         
-        const results = json.results;
-          console.log(results)
-        })
+        console.log(myJson)
+    }
+        
+      
     </script>
   </head>
   <body>
-    <h1>Simple Mapquest example</h1>
-
-    <div id="map"></div>
   </body>
 </html>
