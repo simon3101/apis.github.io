@@ -8,19 +8,21 @@
     
     </style>
     <script>
-      async function getList() {
-        let response = await fetch('https://ll.thespacedevs.com/2.0.0/launch/?format=json');
+      async function getList(u) {
+        let response = await fetch(u);
 
          if (!response.ok) {
              throw new Error(`HTTP error! status: ${response.status}`);
            }
 
-       let myJson = await response.json();
+        const myJson = await response.json();
         
-        console.log(myJson)
+        return myJson
+     }
+        
+    function displayData(){
+      console.log(getList('https://ll.thespacedevs.com/2.0.0/launch/?format=json'));
     }
-        
-      
     </script>
   </head>
   <body>
