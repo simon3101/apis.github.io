@@ -10,7 +10,10 @@
     <script>
         fetch("https://ll.thespacedevs.com/2.0.0/launch/?format=json")
       .then(data=>{
-        console.log(data);
+        return data.json();
+        })
+      .then(json =>{
+        console.log(json)
         })
     </script>
   </head>
